@@ -69,5 +69,5 @@ function playFile(buffer) {
 
   document.getElementById('hexa').contentWindow.postMessage(midiFile.getContent(), '*');
 
-  text(10, 10, midiFile);
+  console.log(midiFile.getContent());
 }

@@ -28,17 +28,7 @@
       <input type="file" onchange="readFile(this)" accept="audio/x-midi" ></label><br />
 
 <script language="javascript" type="text/javascript">
-function downloadFile(input) {
-  if(!input.value)
-    return;
-  var oReq = new XMLHttpRequest();
-  oReq.open("GET", "../sounds/"+input.value, true);
-  oReq.responseType = "arraybuffer";
-  oReq.onload = function (oEvent) {
-    playFile(oReq.response);
-  };
-  oReq.send(null);
-}
+
 </script>
       <!-- Format for including midi doesn't work yet -->
       <label>or choose one :
@@ -61,7 +51,7 @@ function downloadFile(input) {
   <!--this runs HEXA in an Iframe, hexa visualises the hexadecimal information encoded into the
 MIDI file-->
 
-  <iframe src="http://hexa.insertafter.com/" width="100%" height="800px;" id="hexa"></iframe>
+  <iframe src="https://hexa.insertafter.com/" width="100%" height="800px;" id="hexa"></iframe>
 
 
 
