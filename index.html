@@ -4,6 +4,7 @@
   <title>Composatron 9000 </title>
   <script language="javascript" type="text/javascript" src="libraries/p5.js"> </script>
   <script language="javascript" type="text/javascript" src="libraries/MIDIEvents.js"> </script>
+  <script type='text/javascript' src='http://www.midijs.net/lib/midi.js'></script>
   <!-- uncomment lines below to include extra p5 libraries -->
   <!--<script language="javascript" src="libraries/p5.dom.js"></script>-->
   <!--<script language="javascript" src="libraries/p5.sound.js"></script>-->
@@ -20,11 +21,8 @@
 		<h1>composAtron 9000</h1>
 		<h2>Test</h2>
 
-    <audio controls>
-   <source src="Sounds/clocks/3DoorsDown/MIDI guitar - when im gone.mid"
-           type='audio/x-midi'>
-   <p>Your user agent does not support the HTML5 Audio element.</p>
-  </audio>
+     <a href="#" onClick="MIDIjs.play('Sounds/clocks/3DoorsDown/whenimgoneBASS.mid');">play</a>
+     <a href="#" onClick="MIDIjs.stop();">Stop MIDI Playback</a>
 
 		<p>
 			<label style="block"> Pick a MIDI file:
