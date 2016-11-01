@@ -1,0 +1,72 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Composatron 9000 </title>
+  <script language="javascript" type="text/javascript" src="libraries/p5.js"> </script>
+  <script language="javascript" type="text/javascript" src="libraries/MIDIEvents.js"> </script>
+  <!-- uncomment lines below to include extra p5 libraries -->
+  <!--<script language="javascript" src="libraries/p5.dom.js"></script>-->
+  <!--<script language="javascript" src="libraries/p5.sound.js"></script>-->
+  <script language="javascript" type="text/javascript" src="sketch.js"></script>
+
+  <!--<script language="javascript" type="text/javascript" src="population.js"></script>
+  <script language="javascript" type="text/javascript" src="song.js"></script>
+  <script language="javascript" type="text/javascript" src="midi.js"></script>-->
+  <!-- this line removes any default padding and style. you might only need one of these values set. -->
+
+</head>
+<body>
+	<div class="app">
+		<h1>composAtron 9000</h1>
+		<h2>Test</h2>
+
+		<p>
+			<label style="block"> Pick a MIDI file:
+
+      <input type="file" onchange="readFile(this)" accept="audio/x-midi" ></label><br />
+      <input type="file" onchange="readFile(this)" accept="audio/x-midi" ></label><br />
+      <input type="file" onchange="readFile(this)" accept="audio/x-midi" ></label><br />
+
+<script language="javascript" type="text/javascript">
+function downloadFile(input) {
+  if(!input.value)
+    return;
+  var oReq = new XMLHttpRequest();
+  oReq.open("GET", "../sounds/"+input.value, true);
+  oReq.responseType = "arraybuffer";
+  oReq.onload = function (oEvent) {
+    playFile(oReq.response);
+  };
+  oReq.send(null);
+}
+</script>
+      <!-- Format for including midi doesn't work yet -->
+      <label>or choose one :
+				<select onchange="downloadFile(this)">
+          <option value=""></option>
+					<optgroup label="Tests MIDI files"> </optgroup>
+						<option value="whenimgoneBASS.mid"> whenimgoneBASS.mid</option>
+				</select>
+			</label>
+
+		</p>
+	</div>
+  <div id="display"> test </div>
+
+  <!-- this runs MIDItest, which essentially grabs the midi events and parses them to the the
+  HEXA iframe -->
+  <script type="text/javascript" src="MIDI test/MIDIFileTest.js"></script>
+
+
+  <!--this runs HEXA in an Iframe, hexa visualises the hexadecimal information encoded into the
+MIDI file-->
+
+  <iframe src="http://hexa.insertafter.com/" width="100%" height="800px;" id="hexa"></iframe>
+
+
+
+
+  <!-- from here we need to intercept that information and use it as the DNA of the tracks -->
+
+
+</html>
