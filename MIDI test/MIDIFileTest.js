@@ -17,6 +17,17 @@ function readFile(input) {
   }
 }
 
+function downloadFile(input) {
+  if(!input.value)
+    return;
+  var oReq = new XMLHttpRequest();
+  oReq.open("GET", "../sounds/"+input.value, true);
+  oReq.responseType = "arraybuffer";
+  oReq.onload = function (oEvent) {
+    playFile(oReq.response);
+  };
+  oReq.send(null);
+}
 
 // file player
 var midiFile, m;
@@ -58,5 +69,5 @@ function playFile(buffer) {
 
   document.getElementById('hexa').contentWindow.postMessage(midiFile.getContent(), '*');
 
-
+  text(10, 10, midiFile);
 }
